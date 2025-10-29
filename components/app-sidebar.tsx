@@ -1,14 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
-import * as React from "react";
 import {
+  Activity,
   BookOpen,
   GalleryVerticalEnd,
+  LayoutDashboard,
   Settings2,
   Users,
-  Activity,
-  LayoutDashboard,
 } from "lucide-react";
+import * as React from "react";
+import { useEffect, useState } from "react";
 
 import { NavMain } from "@/components/nav-main";
 import { NavUser } from "@/components/nav-user";
@@ -20,8 +20,8 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import axios from "axios";
 import { getToken, setToken } from "@/lib/token";
+import axios from "axios";
 import Cookies from "js-cookie";
 
 // This is sample data.
@@ -33,7 +33,7 @@ const data = {
   },
   teams: [
     {
-      name: "Aeons Leads",
+      name: "Leads",
       logo: GalleryVerticalEnd,
       plan: "Enterprise",
     },
@@ -96,7 +96,7 @@ const salesdata = {
   },
   teams: [
     {
-      name: "Aeons Leads",
+      name: "Leads",
       logo: GalleryVerticalEnd,
       plan: "Enterprise",
     },
@@ -141,7 +141,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     email: string;
     avatar: string;
   } | null>(null);
-
 
   const fetchLoggedInUserData = async () => {
     try {
