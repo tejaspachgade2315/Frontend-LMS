@@ -157,8 +157,6 @@ export default function LoginForm() {
         <Button
           disabled={isLoading}
           className="w-full"
-          title="Click to login directly (demo credentials prefilled)"
-          aria-label="Login (demo)"
         >
           {isLoading ? (
             <LoaderCircle className="mr-2 size-4 animate-spin" />
